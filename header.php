@@ -14,10 +14,10 @@ You should have received a copy of the GNU General Public License along with thi
 <meta name="viewport"content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible"content="ie=edge">
 <title>
-<?php  //bloginfo( 'name' ); ?>
-<?php // wp_title( '', true ); ?>
+<?php  wp_title( '|', true, 'right' ); ?>
+<?php  bloginfo( 'name' ); ?>
 </title>
-<meta name="Description"CONTENT="ディスクリプション">
+<meta name="description"　content="ディスクリプション">
 <meta name="google-site-verification"content=""/>
 <meta name="robots"content="noindex,nofollow">
 <!--ページをサーバーにあげても検索結果に表示されません-->
@@ -54,5 +54,12 @@ You should have received a copy of the GNU General Public License along with thi
 <body>
     <header>
         <h1><?php bloginfo( 'name' ); ?></h1>
-        <?php wp_list_categories( $args ); ?>
+        <ul>
+        <?php wp_list_categories( ); ?>
+        </ul>
+
+        <ul>
+        <?php wp_get_archives(array("type"=>"daily")); ?>
+        </ul>
+        <?php get_search_form( ); ?>
     </header>

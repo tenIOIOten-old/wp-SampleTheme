@@ -3,16 +3,19 @@
 
 <!-- content wrap -->
 <div class="wrap">
+<?php if ( is_home() && ! is_front_page() ) : ?>
+		<header class="page-header">
+			<h1 class="page-title"><?php single_post_title(); ?></h1>
+		</header>
+	<?php else : ?>
+	<header class="page-header">
+		<h2 class="page-title"><?php _e( 'Posts', 'twentyseventeen' ); ?></h2>
+	</header>
+	<?php endif; ?>
 <!-- content -->
 <!-- posts -->
 
-    <ul>
 
-        <?php  
-wp_get_archives(array("type"=>"daily"))
-
-?>
-</ul>
     <?php
     // Start the loop.
     while ( have_posts() ) : the_post();
@@ -28,7 +31,7 @@ wp_get_archives(array("type"=>"daily"))
     </div>
     <footer>
     <!-- catogory link -->
-    <?= the_category( " ") ?>
+    <? the_category( " ") ?>
     <!-- date link -->
     <?php 
     // Get post date
@@ -39,6 +42,7 @@ wp_get_archives(array("type"=>"daily"))
     <a href="<?= get_day_link( $archive_year, $archive_month, $archive_day ); ?>"><?php the_time("Y/m/d") ?></a>
     </footer>
     </div>
+<?php // get_template_part( "content", "page" ); ?>
 <?php endwhile;?>
 </div>
 
