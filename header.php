@@ -14,7 +14,8 @@ You should have received a copy of the GNU General Public License along with thi
 <meta name="viewport"content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible"content="ie=edge">
 <title>
-タイトル
+<?php  //bloginfo( 'name' ); ?>
+<?php // wp_title( '', true ); ?>
 </title>
 <meta name="Description"CONTENT="ディスクリプション">
 <meta name="google-site-verification"content=""/>
@@ -52,5 +53,6 @@ You should have received a copy of the GNU General Public License along with thi
 </head>
 <body>
     <header>
-        <?= the_title("<h1>","</h1>"); ?>
+        <h1><?php bloginfo( 'name' ); ?></h1>
+        <?php wp_list_categories( $args ); ?>
     </header>
