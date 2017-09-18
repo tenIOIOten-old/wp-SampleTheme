@@ -11,5 +11,48 @@ function redirect_404() {
     exit;
   }
   add_action('template_redirect', 'redirect_404');
-  
-?>
+//   Restrict letters
+add_filter('the_excerpt', 'my_the_excerpt');
+function my_the_excerpt($postContent) {
+    $postContent = mb_strimwidth($postContent, 0, 80, "…more","UTF-8");
+    return $postContent;
+}
+  // wegit
+function widgets_init() {
+	register_sidebar( array(
+		'name'          => 'Footer Left Widget',
+		'id'            => 'footer-left-widget',
+    'before_widget' => '<div id="%1$s" class="widget %2$s">',
+    'description'   => 'フッターの左側にウィジットを追加します',
+    'class'         => 'fotter-left-widget',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+  ) );
+    register_sidebar( array(
+        'name'          => 'Sidebar Widget',
+        'id'            => 'sidebar-widget',
+    'before_widget' => '<div id="%1$s" class="widget %2$s">',
+    'description'   => 'サイドバーにウィジットを追加します',
+    'class'         => 'fotter-left-widget',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h3 class="widget-title">',
+        'after_title'   => '</h3>',
+    ) );
+    register_sidebar( array(
+        'name'          => 'Header Nav Widget',
+        'id'            => 'header-nav-widget',
+    'before_widget' => '<div id="%1$s" class="widget %2$s">',
+    'description'   => 'ヘッダーにウィジットを追加します',
+    'class'         => 'fotter-left-widget',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h3 class="widget-title">',
+        'after_title'   => '</h3>',
+    ) );
+}
+add_action( 'widgets_init', 'widgets_init' );
+
+  // common setting
+  function print_name(){
+      echo "Shiratori Tenta";
+  }

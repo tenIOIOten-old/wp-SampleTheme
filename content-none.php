@@ -1,9 +1,9 @@
-<section class="no-results not-found">
-	<header class="page-header">
-		<h1 class="page-title"><?php _e( 'Nothing Found', 'twentyfifteen' ); ?></h1>
+<section >
+	<header >
+		<h2 ><?php _e( 'Nothing Found', 'twentyfifteen' ); ?></h1>
 	</header>
 
-	<div class="page-content">
+	<div >
 
 		<?php if ( is_home() ) : ?>
 
@@ -12,12 +12,17 @@
 		<?php elseif ( is_search() ) : ?>
 
 			<p><?php _e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'twentyfifteen' ); ?></p>
-			<?php get_search_form(); ?>
+				<div class="col-7">
+					<?php get_search_form(); ?>
+				</div>
 
+				
 		<?php else : ?>
 
 			<p><?php _e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'twentyfifteen' ); ?></p>
+			<div class="col-7">
 			<?php get_search_form(); ?>
+		</div>
 
 		<?php endif; ?>
 

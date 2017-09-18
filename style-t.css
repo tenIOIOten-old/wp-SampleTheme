@@ -1,2 +1,67 @@
-:root {
-  margin: 0; }
+a,
+a:hover {
+  color: inherit; }
+
+a:hover {
+  color: #cdcdcd; }
+
+ul {
+  padding: 0; }
+  ul li {
+    list-style: none; }
+
+.l-header {
+  height: 300px;
+  display: flex;
+  justify-content: space-around; }
+  .l-header h1 {
+    line-height: 300px; }
+  .l-header .header-widget {
+    align-self: flex-end; }
+    .l-header .header-widget ul {
+      display: flex;
+      padding: 0;
+      margin: 2em 0; }
+      .l-header .header-widget ul li {
+        list-style: none;
+        margin: 0 1em; }
+
+.l-footer {
+  height: 100px;
+  line-height: 100px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 5em; }
+  .l-footer .footer-widget ul {
+    display: flex;
+    padding: 0; }
+    .l-footer .footer-widget ul li {
+      list-style: none;
+      margin: 0 1em; }
+
+.is-content-header {
+  height: 100px; }
+  .is-content-header h2 {
+    line-height: 100px;
+    font-family: sans-serif;
+    text-align: center;
+    text-decoration: underline; }
+
+.l-sidebar .widget {
+  margin: 2em 0; }
+
+.is-posts-container {
+  display: flex;
+  flex-wrap: wrap; }
+  .is-posts-container .l-post {
+    flex: 0 0 33%; }
+    .is-posts-container .l-post .post-box {
+      margin: .5em;
+      padding: .5em; }
+      .is-posts-container .l-post .post-box:hover {
+        background-color: #efefef; }
+      .is-posts-container .l-post .post-box .post-thumbnail-img {
+        width: 100%;
+        height: auto; }
+      .is-posts-container .l-post .post-box .post-excerpt p {
+        height: 3em; }
